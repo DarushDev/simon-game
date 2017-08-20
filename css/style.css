@@ -28,3 +28,47 @@ body{
 .row:nth-child(2) {/*yellow and blue buttons*/
   bottom:0;
 }
+
+.button {
+  width: 50%;
+  height:100%;
+  position:absolute;
+  cursor:pointer;
+  pointer-events:none;
+}
+
+.button:nth-child(2) {
+  right:0;
+}
+
+.button:nth-child(1) {
+  left:0;
+}
+
+#btn1 {
+  background-color:#1b5e20;
+}
+.btn1:active{
+  background-color:#00e676 !important;
+}
+
+#btn2{
+  background-color:#b71c1c;
+}
+.btn2:active{
+  background-color:#ff1744 !important;
+}
+
+#btn3{
+  background-color:#f9a825;
+}
+.btn3:active{
+  background-color:#ffeb3b !important;
+}
+
+#btn4{
+  background-color:#0d47a1;
+}
+.btn4:active {
+  background-color:#448aff !important;
+}
