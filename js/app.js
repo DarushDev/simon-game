@@ -22,6 +22,37 @@ $("document").ready(function(){
   var stepCounter = 0;
 
 
+  function turnOffButtons(){
+    for(var i=1; i<=4; i++){
+      $("#btn"+i).off();
+      $("#btn"+i).removeClass("btn"+i);
+    }
+    $(".button").css("pointer-events","none");
+  }
+
+  function clickButton(btn){
+    switch (btn) {
+      case "#btn1":
+        $(btn).css("background-color","#00e676");
+        audio[0].play();
+        break;
+      case "#btn2":
+        $(btn).css("background-color","#ff1744");
+        audio[1].play();
+        break;
+      case "#btn3":
+        $(btn).css("background-color","#ffeb3b");
+        audio[2].play();
+        break;
+      case "#btn4":
+        $(btn).css("background-color","#448aff");
+        audio[3].play();
+        break;
+      default:
+        break;
+    }
+  }
+
   function releaseButton(btn){
     switch(btn){
       case "#btn1":
