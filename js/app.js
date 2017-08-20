@@ -22,7 +22,51 @@ $("document").ready(function(){
   var stepCounter = 0;
 
 
-  
+
+
+  function turnOnButtons(){
+    var userClicks = 0;
+
+    for(var i=1; i<=4; i++){
+      $("#btn"+i).addClass("btn"+i);//activate buttons
+      (function(i){
+
+        $("#btn"+i).mousedown(function(){//mouse goes down
+          audio[i-1].play();  // play the audio
+        });
+
+        $("#btn"+i).mouseup(function(){//mouse goes up
+          if(steps[userClicks] === i) {//to check if the current key matches the steps
+            userClicks++;//increase the click counter
+            if (userClicks === steps.length){ // if last click
+              if(steps.length === 20){ // Won the game
+                turnOffButtons();
+                clearTheGame();
+                alert("Congratulations You Win!");
+              }
+              steps.push(getRandom());//push a random step into the steps array
+              play(); // replay the steps with an additional step
+            }
+          } else {//if wrong key pressed
+            turnOffButtons();
+            if (isStrict) { // if strict mode is on
+              steps = []; //clear all the steps
+              steps.push(getRandom());//push one random step
+            }
+            counterText.text("!!").fadeTo(250, 0).fadeTo(250,1).fadeTo(250,0).fadeTo(250,1);
+            setTimeout(function(){
+              play();// replay the game
+            }, 1000);
+
+          }
+        });
+
+      }(i));
+    }
+
+    $(".button").css("pointer-events","all");//enable pointer events
+  }
+
   var interval;
   function play(){
     counterText.text(("0"+steps.length).slice(-2)).fadeTo(250, 0).fadeTo(250,1);
