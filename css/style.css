@@ -254,3 +254,36 @@ input:checked + .slider:before {
   opacity: 1;
 }
 /* end rounded checkbox */
+
+.r-btn-wrapper{
+  width:50%;
+  height:100%;
+  position:absolute;
+  font-weight:bold;
+} /*start and strict buttons wrapper*/
+.r-btn-wrapper:nth-child(1){
+  left:0;
+}/*START button wrapper*/
+.r-btn-wrapper:nth-child(2){
+  right:0;
+}/*STRICT button wrapper*/
+.r-btn-wrapper:nth-child(1) button{
+  position:absolute;
+  top:10%;
+  left:35%;
+} /*START button*/
+.r-btn-wrapper:nth-child(1) span{
+  position:absolute;
+  bottom:10%;
+  left:27%;
+}
+.r-btn-wrapper:nth-child(2) span{
+  position:absolute;
+  bottom:10%;
+  left:25%;
+}
+.r-btn-wrapper:nth-child(2) .round{
+  position:absolute;
+  top:10%;
+  left:35%;
+}/*STRICT button*/
