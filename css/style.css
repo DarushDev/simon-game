@@ -116,3 +116,22 @@ body{
   position:relative;
   top:12.5%;
 }
+
+#counter-wrapper{
+  background-color:#fff;
+  color:white;
+  height: 40%;
+  width:50%;
+  font-size:1.5em;
+  border:5px solid #000;
+  text-align:center;
+  position:absolute;
+  top:33%;
+  left:23%;
+  color:red;
+}
+
+#counter{
+  line-height:120%;
+  margin:auto;
+}
