@@ -206,3 +206,51 @@ input:checked + .slider:before {
   transform: translateY(4px);
 }
 /*end start button*/
+
+/* rounded checkbox */
+.round {
+  position: relative;
+  top:25%;
+}
+
+.round:active {
+  transform: translateY(4px);
+}
+
+.round label {
+  background-color: #999900;
+  border: 5px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.round label:after {
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: yellow;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+/* end rounded checkbox */
