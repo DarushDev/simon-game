@@ -72,3 +72,47 @@ body{
 .btn4:active {
   background-color:#448aff !important;
 }
+
+#switch-wrapper {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #333333;
+  width:50%;
+  height:50%;
+  text-align:center;
+  top: 25%;
+  left: 25%;
+  position:absolute;
+  border-radius: 10%;
+  color:#fff;
+}
+
+.s-row {
+  text-align:center;
+  margin:auto;
+  width:100%;
+  height: 33.33%;
+  position:absolute;
+  font-weight:bold;
+}
+
+.s-row:nth-child(1){ /*Counter*/
+  top:0;
+}
+
+.s-row:nth-child(2){ /*start and strict buttons*/
+  top:33%;
+}
+
+.s-row:nth-child(3){ /*power switch*/
+  bottom:0;
+}
+
+.s-row:nth-child(3) span:nth-child(1){ /*OFF*/
+  position:relative;
+  top:12.5%;
+}
+
+.s-row:nth-child(3) span:nth-child(3){/*ON*/
+  position:relative;
+  top:12.5%;
+}
