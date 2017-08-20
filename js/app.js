@@ -22,7 +22,46 @@ $("document").ready(function(){
   var stepCounter = 0;
 
 
+  powerButton.change(function(){
+    if($(this).is(":checked")){
+      counterText.text("--");
 
+      startButton.click(function(){
+        clearInterval(interval);
+        releaseButtons();
+        $(this).css("background-color","red");
+        steps = [];
+        steps.push(getRandom());//push a random step into the steps array
+        play();//play the random sounds
+      });
+
+      strictMode.attr("disabled",false);
+      strictMode.change(function(){
+        if($(this).is(":checked")){
+          isStrict = true;
+        } else {
+          isStrict = false;
+        }
+      });
+
+    } else {
+      counterText.text("");
+      startButton.css("background-color","#990000");
+      startButton.off();
+      strictMode.attr("disabled",true);
+      strictMode.prop('checked', false);
+      strictMode.off();
+      clearTheGame();
+    }
+
+  });
+
+  function clearTheGame(){
+      steps = [];
+      turnOffButtons();
+      releaseButtons();
+      clearInterval(interval);
+  }
 
   function turnOnButtons(){
     var userClicks = 0;
