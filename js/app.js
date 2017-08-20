@@ -22,6 +22,26 @@ $("document").ready(function(){
   var stepCounter = 0;
 
 
+  
+  var interval;
+  function play(){
+    counterText.text(("0"+steps.length).slice(-2)).fadeTo(250, 0).fadeTo(250,1);
+    turnOffButtons();//prevent user clicks while playing
+    stepCounter = 0; //start the steps from 0 up to the steps length
+    interval = setInterval(function(){//repeat this every 1000 ms
+      releaseButton("#btn" + steps[stepCounter - 1]);// Release the previous button
+      clickButton("#btn" + steps[stepCounter]);// click the current button
+
+      if(stepCounter === steps.length){// if last step reached
+        clearInterval(interval);// stop the interval clock
+        turnOnButtons(); //let the user click buttons
+        stepCounter = 0;//reset steps
+      }
+
+      stepCounter++;// increase step counter
+    }, 1000);
+  }
+
   function turnOffButtons(){
     for(var i=1; i<=4; i++){
       $("#btn"+i).off();
