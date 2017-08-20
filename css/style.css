@@ -185,3 +185,24 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 /*end power switch*/
+
+/*start button*/
+.raised-button {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #990000;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.raised-button:active {
+  /* background-color:red; */
+  transform: translateY(4px);
+}
+/*end start button*/
