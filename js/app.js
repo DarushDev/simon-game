@@ -22,6 +22,37 @@ $("document").ready(function(){
   var stepCounter = 0;
 
 
-  
+  function releaseButton(btn){
+    switch(btn){
+      case "#btn1":
+        $(btn).css("background-color","#1b5e20");
+        break;
+      case "#btn2":
+        $(btn).css("background-color","#b71c1c");
+        break;
+      case "#btn3":
+        $(btn).css("background-color","#f9a825");
+        break;
+      case "#btn4":
+        $(btn).css("background-color","#0d47a1");
+        break;
+      default:
+        break;
+    }
+  }
+
+  function releaseButtons(){
+    for(var i=1; i<=4; i++){
+        releaseButton("#btn"+i);
+    }
+  }
+
+  function getRandom(){
+    var random = Math.floor(Math.random() * 4) + 1;
+    while(random === steps[steps.length - 1]){
+      random = Math.floor(Math.random() * 4) + 1;
+    }
+    return random;
+  }
 
 });
